@@ -6,7 +6,7 @@ import cars from "./practice";
 console.log(cars);
 const [honda,tesla]=cars;
 
-const {coloursByPopularity :[teslaTopColour],speedStats:{topSpeed:teslaTopSpeed}} =tesla;
+  const {coloursByPopularity :[teslaTopColour],speedStats:{topSpeed:teslaTopSpeed}} =tesla;
 const {coloursByPopularity:[hondaTopColour], speedStats:{topSpeed:hondaTopSpeed}} =honda;
 console.log(teslaTopColour);
 console.log(teslaTopSpeed);
@@ -39,3 +39,64 @@ ReactDOM.render(
 // to install the node modules and
 // npm run dev
 // to launch your react project in your browser
+
+
+// array desctructuring
+// const foo = ["one", "two", "three"];
+
+// const [red, yellow, green] = foo;
+// console.log(red); // "one"
+// console.log(yellow); // "two"
+// console.log(green); // "three"
+
+// Destructuring with more elements than the source
+// In an array desctructuring with an array of length N specified on the right hand side 
+// of the assignment., if the number of variables specified on the left-hand
+// are more than N then only the first N variables are assigned values.
+// The values of the remaining variables will be undefined
+
+const foo = ["one", "two"];
+
+const [red, yellow, green, blue] = foo;
+console.log(red); // "one"
+console.log(yellow); // "two"
+console.log(green); // undefined
+console.log(blue); // undefined
+
+
+// Desctructuring lets you swap the variables 
+// without desctructuring the swapping requires a temporary variable
+let a = 1;
+let b = 3;
+
+[a, b] = [b, a];
+console.log(a); // 3
+console.log(b); // 1
+
+const arr = [1, 2, 3];
+[arr[2], arr[1]] = [arr[1], arr[2]];
+console.log(arr); // [1, 3, 2]
+
+
+// Parsing an array returned from a function 
+// function f() {
+//   return [1, 2];
+// }
+
+// const [a, b] = f();
+// console.log(a); // 1
+// console.log(b); // 2
+
+// Ignoring returned values
+ // You can ignore returned values that you are not interested in 
+ function f(){
+  return [1,2,3];
+ }
+ const [a1, ,b1]=f();
+
+ // you can also ignore all the returned values
+
+ [, ,]=f();
+ 
+
+
